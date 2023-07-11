@@ -6,23 +6,36 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateCategoriaRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
-     */
     public function rules(): array
     {
         return [
-            //
+            'Codigo' => ['required', 'string', "unique:categorias,Codigo,{$this->categoria->id},id"],
+            'Nombre' => ['nullable', 'string'],
+            'Descripcion' => ['nullable', 'string'],
+            'Observacion' => ['nullable', 'string'],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'Codigo.required' => 'El campo Codigo no debe estar vacio',
+            'Codigo.string' => 'El Codigo no es valido',
+            'Codigo.unique' => 'El Codigo ya se encuentra registrado',
+
+            'Nombre.required' => 'El campo Nombre no debe estar vacio',
+            'Nombre.string' => 'El Nombre no es valido',
+
+            'Descripcion.required' => 'El campo Descripcion no debe estar vacio',
+            'Descripcion.string' => 'El Descripcion no es valido',
+
+            'Observacion.required' => 'El campo Observacion no debe estar vacio',
+            'Observacion.string' => 'El Observacion no es valido',
         ];
     }
 }

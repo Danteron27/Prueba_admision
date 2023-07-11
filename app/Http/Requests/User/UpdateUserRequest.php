@@ -17,14 +17,14 @@ class UpdateUserRequest extends FormRequest
         return [
             'Nombre' => ['required', 'string'],
             'usuario' => ['required', 'string'],
-            'email' => ['required', 'email', "unique:users,email,{$this->user->id}"],
-            'password' => ['nullable', 'string', 'min:8', 'confirmed'],
+            'email' => ['required', 'email', "unique:users,email,{$this->user->Id_usuario},Id_usuario"],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
         ];
     }
 
     public function messages()
     {
-        return[
+        return [
             'Nombre.required' => 'El campo Nombre no debe estar vacio',
             'Nombre.string' => 'El nombre no es valido',
 
@@ -36,6 +36,7 @@ class UpdateUserRequest extends FormRequest
             'email.unique' => 'El email ya se encuentra registrado',
 
 
+            'password.required' => 'El campo password no debe estar vacio',
             'password.string' => 'La contraseña ingresada no es valida',
             'password.min' => 'La contraseña debe contener minimo 8 caracteres',
             'password.confirmed' => 'Las contraseñas no coinciden',

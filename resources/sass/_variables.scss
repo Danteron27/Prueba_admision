@@ -5,3 +5,45 @@ $body-bg: #f8fafc;
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+
+.card-location {
+  display: inline-block;
+  margin-right: 3px;
+  padding: 5px 10px;
+  border-radius: 200px;
+  background-color: #8c62af;
+}
+.card-name {
+  display: inline-block;
+  margin-right: 3px;
+  padding: 5px 10px;
+  border-radius: 200px;
+  background-color: #2fb641;
+}
+.card-value
+{
+    display: inline-block;
+    margin-right: 3px;
+    padding: 5px 10px;
+    border-radius: 200px;
+    background-color: #faf600;
+}
+.card-status{
+    display: inline-block;
+    margin-right: 3px;
+    padding: 5px 10px;
+    border-radius: 200px;
+    background-color: #ff1d1d;
+}
+
+.observation-column {
+    max-width: 200px;
+  }
+
+
+  .observation-content {
+    white-space: pre-wrap;
+  }
+
+

@@ -16,7 +16,7 @@ class CreateUserRequest extends FormRequest
     {
         return [
             'Nombre' => ['required', 'string'],
-            'usuario' => ['required', 'string'],
+            'usuario' => ['required', 'string', 'unique:users,usuario'],
             'email' => ['required', 'email', 'unique:users,email'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ];
@@ -30,6 +30,7 @@ class CreateUserRequest extends FormRequest
 
             'usuario.required' => 'El campo Usuario no debe estar vacio',
             'usuario.string' => 'El usuario no es valido',
+            'usuario.unique' => 'El usuario ya se encuentra registrado',
 
             'email.required' => 'El campo email no debe estar vacio',
             'email.email' => 'El email introducido no es valido',

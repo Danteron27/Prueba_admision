@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Categoria;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Elemento extends Model
 {
@@ -24,6 +25,6 @@ class Elemento extends Model
     ];
     public function categoria()
     {
-        return $this->belongsTo(Categoria::class, 'id');
+        return $this->belongsTo(Categoria::class, 'Id_categorias');
     }
 }
